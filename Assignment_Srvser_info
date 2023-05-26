@@ -1,0 +1,26 @@
+#! /bin/bash
+
+echo  "******Shell script assignment******"
+
+echo "Welcome to 2023, by user: $(whoami)"
+
+echo "Today date is:"
+date | awk '{print $3 "/" $2 "/" $6}'
+
+echo "******************************************"
+echo "Time is:"
+date | awk '{print $4}'
+
+echo "*******************************************"
+echo "Server Uptime is:"
+uptime
+
+echo "*************************************************"
+echo "My server Disk utilization is:"
+df -h | xargs | awk '{print "free disk space is: "$11}'
+df -h | xargs | awk '{print "Total disk space is: "$9}'
+
+echo "***************************************************"
+echo "My server Ram utilization is:"
+df -h | xargs | awk '{print "Free Memory:" $10}'
+df -h | xargs | awk '{print "total Memory:" $9}'
